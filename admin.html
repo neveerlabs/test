@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard Admin</h1>
+        <p>Selamat datang, Admin!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('admin');
+            window.location.href = '/register.html';
+        }
+        // Proteksi: kalau bukan admin, redirect
+        if (!localStorage.getItem('admin')) {
+            window.location.href = '/register.html';
+        }
+    </script>
+</body>
+</html>
